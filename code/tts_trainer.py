@@ -268,6 +268,7 @@ def train(args):
         device)
 
     global_step = 0
+    # CAN LOAD YOUR OWN TRAINED MODEL FOR EVAL / CONTINUE TRAINING:
     if args.checkpoint_path is not None:
         local_xlsr_model.load_state_dict(torch.load(args.checkpoint_path))
 
@@ -362,15 +363,11 @@ def train(args):
 
             torch.cuda.empty_cache()
 
-
         if args.wandb:
             wandb.log({"train/epoch": epoch}, step=global_step)
 
 
-
-
 if __name__ == "__main__":
-
 
     parser = argparse.ArgumentParser(description="DeepFake Detection in Audio speech")
 
@@ -428,7 +425,6 @@ if __name__ == "__main__":
                         type=int,
                         default=32,
                         help="test batch size")
-
 
     parser.add_argument("--wandb",
                         type=str2bool,
