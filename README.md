@@ -4,6 +4,8 @@ Official implementation for Few-Shot Speech Deepfake Detection Adaptation with G
  
 Link to the paper:
 
+Link to LibriFake:
+
 
 ## 🔧 Setup Instructions
 
